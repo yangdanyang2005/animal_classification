@@ -54,6 +54,8 @@ class CustomImageDataset(Dataset):
         self.image_paths = image_paths
         self.labels = labels
         self.transform = transform
+        # 添加 classes 属性
+        self.classes = sorted(list(set(self.labels)))  # 假设 self.labels 包含所有标签
 
     def __len__(self):
         return len(self.image_paths)
